@@ -118,7 +118,6 @@ void Scanner::skipWS()
     }
 }
 
-//printhere
 
 void Scanner::checkForDash()
 {
@@ -230,19 +229,6 @@ void Scanner::scanLineComment()
     currentString.push_back(input);
     input = ifs.get();
   }
-
-  /*if(ifs.eof())
-  {
-    t.changeType(UNDEFINED);
-  }
-  else
-  {
-    t.changeType(COMMENT);
-  }
-
-  t.changeValue(currentString);
-  t.changeLineNum(currentLineNum);
-  tokens.push_back(t);*/
 }
 
 void Scanner::scanBlockComment()
@@ -256,10 +242,6 @@ void Scanner::scanBlockComment()
     if(input == '#' && currentString.back() == '|')
     {
       currentString.push_back(input);
-      /*t.changeType(COMMENT);
-      t.changeValue(currentString);
-      t.changeLineNum(stringLineNum);
-      tokens.push_back(t);*/
       input = ifs.get();
       return;
     }
@@ -272,11 +254,6 @@ void Scanner::scanBlockComment()
     currentString.push_back(input);
     input = ifs.get();
   }
-
-  /*t.changeType(UNDEFINED);
-  t.changeValue(currentString);
-  t.changeLineNum(stringLineNum);
-  tokens.push_back(t);*/
 }
 
 void Scanner::checkForUndef()
