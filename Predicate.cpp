@@ -3,7 +3,6 @@
 Predicate::Predicate(string newName)
 {
   name = newName;
-  //value = newValue;
 }
 
 void Predicate::changeName(string newName)
